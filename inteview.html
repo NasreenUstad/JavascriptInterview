@@ -1,0 +1,37 @@
+<script>
+    // Promises produce
+    // Promise using constructor
+    const userPromise = new Promise((resolve, reject) => {
+        const number = 98;
+        console.log("Inside Promises");
+        setTimeout(() => {
+            if (number % 2 == 0)
+                resolve(number);
+            else reject("Promise rejection");
+        }, 2000);
+
+    })
+
+
+    // Promise consume
+    userPromise.then((response) => {
+        console.log("Promise response", response)
+        return getBiodata(response);
+        // .catch((err) => { console.log("bjjhjh", err) })
+
+    }).then((res) => { console.log(res) })
+        .catch(error => console.log(error));
+
+
+    // promise using function
+    const getBiodata = (counter) => {
+        return new Promise((resolve, reject) => {
+            let b = 7;
+            setTimeout((counterValue) => {
+                if (counterValue + b > 100)
+                    resolve("Sum is greater than 100")
+                else reject("Sum is less than 100")
+            }, 2000, counter);
+        })
+    }
+</script>

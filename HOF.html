@@ -1,0 +1,16 @@
+<script>
+
+    // InterviewQuestions is HIgher Order function
+    const InterviewQuestions = (name) => {
+        // This is anonymous function whinch has no name and also a call back function
+        return function (topic) {
+            console.log(`Hello ${name}, Your topic for the interview is ${topic}`);
+        }
+    }
+
+    InterviewQuestions("Nasreen")("React JS");
+    const cand1 = InterviewQuestions("Vinod");
+    cand1("Angular");
+    cand1("Javascript");
+
+</script>
